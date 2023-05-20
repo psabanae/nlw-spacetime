@@ -1,9 +1,9 @@
-import { styled } from "nativewind";
-import { useEffect, useState } from "react";
-import { ImageBackground } from "react-native";
-import { SplashScreen, Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import * as SecureStore from "expo-secure-store";
+import { styled } from 'nativewind';
+import { useEffect, useState } from 'react';
+import { ImageBackground } from 'react-native';
+import { SplashScreen, Stack } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import * as SecureStore from 'expo-secure-store';
 
 import { useFonts, Roboto_400Regular, Roboto_700Bold,  } from '@expo-google-fonts/roboto';
 import { BaiJamjuree_700Bold,  } from '@expo-google-fonts/bai-jamjuree';
@@ -45,12 +45,13 @@ export default function Layout() {
             <Stack
                 screenOptions={{ 
                     headerShown: false,
-                    contentStyle: {backgroundColor: 'transparent'}
+                    contentStyle: {backgroundColor: 'transparent'},
+                    animation: 'fade'
                 }}
             >
                 <Stack.Screen name="index" redirect={isUserAuthenticated}/>
-                <Stack.Screen name="new"/>
                 <Stack.Screen name="memories"/>
+                <Stack.Screen name="new"/>
             </Stack>
         </ImageBackground>
     )
